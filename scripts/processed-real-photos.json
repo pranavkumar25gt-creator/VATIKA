@@ -1,0 +1,498 @@
+[
+  {
+    "id": "zomato-hero-building",
+    "src": "/assets/photos/exterior/facade-twilight.webp",
+    "category": "exterior",
+    "alt": {
+      "en": "Hotel Vatika illuminated building and entrance at twilight",
+      "mr": "संध्याकाळच्या वेळी हॉटेल वाटिकाची भव्य रोषणाई",
+      "hi": "गोधूलि वेला में होटल वाटिका का भव्य स्वरूप"
+    },
+    "dominantColor": "#a18875",
+    "dimensions": {
+      "width": 1920,
+      "height": 1280
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "zomato-entrance-lawn",
+    "src": "/assets/photos/exterior/entrance-warm.webp",
+    "category": "exterior",
+    "alt": {
+      "en": "Hotel Vatika welcoming entrance porch and lush greenery",
+      "mr": "हॉटेल वाटिकाचे निसर्गरम्य स्वागत दालन व प्रवेशद्वार",
+      "hi": "होटल वाटिका का प्राकृतिक स्वागत द्वार और हरा-भरा प्रांगण"
+    },
+    "dominantColor": "#665c50",
+    "dimensions": {
+      "width": 1920,
+      "height": 1279
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "google-dining-sanctuary",
+    "src": "/assets/photos/interior/main-dining-hall.webp",
+    "category": "interior",
+    "alt": {
+      "en": "Main dining hall and family seating sanctuary at Hotel Vatika",
+      "mr": "हॉटेल वाटिकाचे प्रशस्त कौटुंबिक डायनिंग दालन",
+      "hi": "होटल वाटिका का विशाल पारिवारिक डाइनिंग हॉल"
+    },
+    "dominantColor": "#626158",
+    "dimensions": {
+      "width": 1440,
+      "height": 1080
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "google-brass-decor",
+    "src": "/assets/photos/interior/brass-handi-counter.webp",
+    "category": "interior",
+    "alt": {
+      "en": "Authentic dining seating and warm ambience",
+      "mr": "उबदार प्रकाश आणि अस्सल बैठक व्यवस्था",
+      "hi": "पारंपरिक बैठक व्यवस्था और शांत वातावरण"
+    },
+    "dominantColor": "#7c5f62",
+    "dimensions": {
+      "width": 675,
+      "height": 1200
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "google-hall-banquet",
+    "src": "/assets/photos/hall/banquet-hall-stage.webp",
+    "category": "hall",
+    "alt": {
+      "en": "Hotel Vatika spacious celebration hall arranged for family gathering",
+      "mr": "कौटुंबिक व मंगल कार्यासाठी हॉटेल वाटिकाचा भव्य सेलिब्रेशन हॉल",
+      "hi": "पारिवारिक उत्सव और आयोजनों के लिए भव्य बैंक्वेट हॉल"
+    },
+    "dominantColor": "#6c6464",
+    "dimensions": {
+      "width": 810,
+      "height": 1080
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "google-hall-events",
+    "src": "/assets/photos/hall/birthday-setup.webp",
+    "category": "event",
+    "alt": {
+      "en": "Birthday and celebratory party setup at Hotel Vatika",
+      "mr": "वाढदिवस व पार्टी सोहळ्याची सुंदर सजावट",
+      "hi": "जन्मदिन और उत्सव की आकर्षक व्यवस्था"
+    },
+    "dominantColor": "#7d6e66",
+    "dimensions": {
+      "width": 810,
+      "height": 1080
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "google-outdoor-lawn",
+    "src": "/assets/photos/hall/kitty-party-setup.webp",
+    "category": "event",
+    "alt": {
+      "en": "Evening outdoor seating and social gatherings",
+      "mr": "संध्याकाळची खुली बैठक आणि स्नेहमिलन व्यवस्था",
+      "hi": "शाम के समय खुले प्रांगण में मित्र मिलन व्यवस्था"
+    },
+    "dominantColor": "#7f706a",
+    "dimensions": {
+      "width": 810,
+      "height": 1080
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-vatika-special-veg",
+    "src": "/assets/photos/food/vatika-special.webp",
+    "category": "food",
+    "alt": {
+      "en": "Vatika Special Veg",
+      "mr": "वाटिका स्पेशल व्हेज",
+      "hi": "वाटिका स्पेशल वेज"
+    },
+    "dominantColor": "#886d4e",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-vatika-special-macro",
+    "src": "/assets/photos/food/vatika-special-macro.webp",
+    "category": "food",
+    "alt": {
+      "en": "Vatika Special Veg Plating",
+      "mr": "वाटिका स्पेशल व्हेज सर्व्हिंग",
+      "hi": "वाटिका स्पेशल वेज"
+    },
+    "dominantColor": "#886d4e",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-malai-methi",
+    "src": "/assets/photos/food/malai-methi.webp",
+    "category": "food",
+    "alt": {
+      "en": "Malai Methi",
+      "mr": "मलाई मेथी",
+      "hi": "मलाई मेथी"
+    },
+    "dominantColor": "#dbd5c9",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-navratan-kurma",
+    "src": "/assets/photos/food/navratan-kurma.webp",
+    "category": "food",
+    "alt": {
+      "en": "Navratan Kurma",
+      "mr": "नवरत्न कुरमा",
+      "hi": "नवरत्न कुरमा"
+    },
+    "dominantColor": "#c8c2b3",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-sev-masala",
+    "src": "/assets/photos/food/sev-bhaji.webp",
+    "category": "food",
+    "alt": {
+      "en": "Sev Bhaji / Sev Masala",
+      "mr": "शेव भाजी / शेव मसाला",
+      "hi": "सेव भाजी / सेव मसाला"
+    },
+    "dominantColor": "#7e715e",
+    "dimensions": {
+      "width": 1200,
+      "height": 843
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-veg-bhuna",
+    "src": "/assets/photos/food/paneer-angara.webp",
+    "category": "food",
+    "alt": {
+      "en": "Paneer Angara / Veg Bhuna",
+      "mr": "पनीर अंगारा / व्हेज भुना",
+      "hi": "पनीर अंगारा / वेज भुना"
+    },
+    "dominantColor": "#c5a689",
+    "dimensions": {
+      "width": 1200,
+      "height": 799
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-paneer-angara-macro",
+    "src": "/assets/photos/food/paneer-angara-macro.webp",
+    "category": "food",
+    "alt": {
+      "en": "Paneer Angara Macro",
+      "mr": "पनीर अंगारा मॅक्रो",
+      "hi": "पनीर अंगारा"
+    },
+    "dominantColor": "#c5a689",
+    "dimensions": {
+      "width": 1200,
+      "height": 799
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-tawa-bhaji",
+    "src": "/assets/photos/food/pav-bhaji.webp",
+    "category": "food",
+    "alt": {
+      "en": "Tawa Bhaji",
+      "mr": "तवा भाजी",
+      "hi": "तवा भाजी"
+    },
+    "dominantColor": "#c9b7a7",
+    "dimensions": {
+      "width": 1200,
+      "height": 616
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-dal-fry",
+    "src": "/assets/photos/food/curd.webp",
+    "category": "food",
+    "alt": {
+      "en": "Dal Fry Tadka",
+      "mr": "दाल फ्राय तडका",
+      "hi": "दाल फ्राई तड़का"
+    },
+    "dominantColor": "#d0c0aa",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-baingan-masala",
+    "src": "/assets/photos/food/baingan-bharta.webp",
+    "category": "food",
+    "alt": {
+      "en": "Baingan Masala / Bharta",
+      "mr": "वांग्याचे भरीत / बैंगन मसाला",
+      "hi": "बैंगन भर्ता / बैंगन मसाला"
+    },
+    "dominantColor": "#5b5048",
+    "dimensions": {
+      "width": 899,
+      "height": 600
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-chana-masala",
+    "src": "/assets/photos/food/thecha.webp",
+    "category": "food",
+    "alt": {
+      "en": "Chana Masala",
+      "mr": "चना मसाला",
+      "hi": "चना मसाला"
+    },
+    "dominantColor": "#b6856a",
+    "dimensions": {
+      "width": 1200,
+      "height": 799
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-mushroom-masala",
+    "src": "/assets/photos/food/kadai-mushroom.webp",
+    "category": "food",
+    "alt": {
+      "en": "Mushroom Masala Kadai",
+      "mr": "मशरूम मसाला कढई",
+      "hi": "मशरूम मसाला कढ़ाई"
+    },
+    "dominantColor": "#bdb5ae",
+    "dimensions": {
+      "width": 1200,
+      "height": 843
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-mushroom-handi",
+    "src": "/assets/photos/food/mushroom-handi.webp",
+    "category": "food",
+    "alt": {
+      "en": "Mushroom Handi",
+      "mr": "मशरूम हांडी",
+      "hi": "मशरूम हांडी"
+    },
+    "dominantColor": "#9c7159",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-veg-kofta-handi",
+    "src": "/assets/photos/food/veg-kofta.webp",
+    "category": "food",
+    "alt": {
+      "en": "Veg Kofta Handi",
+      "mr": "व्हेज कोफ्ता हांडी",
+      "hi": "वेज कोफ्ता हांडी"
+    },
+    "dominantColor": "#b69a77",
+    "dimensions": {
+      "width": 900,
+      "height": 600
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-veg-shaam-savera",
+    "src": "/assets/photos/food/malai-kofta.webp",
+    "category": "food",
+    "alt": {
+      "en": "Veg Shaam Savera / Malai Kofta",
+      "mr": "व्हेज शाम सवेरा / मलाई कोफ्ता",
+      "hi": "वेज शाम सवेरा / मलाई कोफ्ता"
+    },
+    "dominantColor": "#987a6b",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-paneer-rajwadi",
+    "src": "/assets/photos/food/paneer-rajwadi.webp",
+    "category": "food",
+    "alt": {
+      "en": "Paneer Rajwadi",
+      "mr": "पनीर रजवाडी",
+      "hi": "पनीर रजवाड़ी"
+    },
+    "dominantColor": "#a19885",
+    "dimensions": {
+      "width": 1200,
+      "height": 843
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-kaju-masala",
+    "src": "/assets/photos/food/kaju-masala.webp",
+    "category": "food",
+    "alt": {
+      "en": "Kaju Masala",
+      "mr": "काजू मसाला",
+      "hi": "काजू मसाला"
+    },
+    "dominantColor": "#886d4e",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-kaju-masala-macro",
+    "src": "/assets/photos/food/kaju-masala-macro.webp",
+    "category": "food",
+    "alt": {
+      "en": "Kaju Masala Macro",
+      "mr": "काजू मसाला मॅक्रो",
+      "hi": "काजू मसाला"
+    },
+    "dominantColor": "#886d4e",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-veg-lollipop",
+    "src": "/assets/photos/food/veg-lollipop.webp",
+    "category": "food",
+    "alt": {
+      "en": "Veg Lollipop / Gold Finger",
+      "mr": "व्हेज लॉलीपॉप / गोल्ड फिंगर",
+      "hi": "वेज लॉलीपॉप / गोल्ड फिंगर"
+    },
+    "dominantColor": "#9a7452",
+    "dimensions": {
+      "width": 1200,
+      "height": 843
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-mushroom-tikka",
+    "src": "/assets/photos/food/paneer-hot-pan.webp",
+    "category": "food",
+    "alt": {
+      "en": "Mushroom Tikka Sizzler",
+      "mr": "मशरूम टिक्का सिझलर",
+      "hi": "मशरूम टिक्का सिज़लर"
+    },
+    "dominantColor": "#baa292",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-cheese-garlic-naan",
+    "src": "/assets/photos/food/garlic-naan.webp",
+    "category": "food",
+    "alt": {
+      "en": "Cheese Garlic Naan",
+      "mr": "चीज गार्लिक नान",
+      "hi": "चीज लहसुन नान"
+    },
+    "dominantColor": "#e3dfd9",
+    "dimensions": {
+      "width": 1200,
+      "height": 615
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-butter-tandoori-roti",
+    "src": "/assets/photos/food/butter-roti.webp",
+    "category": "food",
+    "alt": {
+      "en": "Butter Tandoori Roti",
+      "mr": "बटर तंदूरी रोटी",
+      "hi": "बटर तंदूरी रोटी"
+    },
+    "dominantColor": "#988068",
+    "dimensions": {
+      "width": 901,
+      "height": 600
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-butter-chapati",
+    "src": "/assets/photos/food/butter-kulcha.webp",
+    "category": "food",
+    "alt": {
+      "en": "Butter Kulcha & Chapati",
+      "mr": "बटर कुलचा व चपाती",
+      "hi": "बटर कुलचा और चपाती"
+    },
+    "dominantColor": "#85765c",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "isRealAssetProvided": true
+  },
+  {
+    "id": "food-tandoor-spread",
+    "src": "/assets/photos/food/tandoor-bread-spread.webp",
+    "category": "food",
+    "alt": {
+      "en": "Fresh Tandoori Bread Spread",
+      "mr": "गरमागरम तंदूरी रोट्यांचा थाट",
+      "hi": "ताजा तंदूरी रोटियों का थाल"
+    },
+    "dominantColor": "#e3dfd9",
+    "dimensions": {
+      "width": 1200,
+      "height": 615
+    },
+    "isRealAssetProvided": true
+  }
+]
