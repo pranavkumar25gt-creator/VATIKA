@@ -230,9 +230,21 @@ export const DishModelViewer: React.FC<DishModelViewerProps> = ({
       setIsLoading(false);
     }
 
-    // Gentle Auto-Rotation & Rendering Loop
+    // Visibility / Intersection Observer to pause WebGL rendering when offscreen
+    let isVisible = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(container);
+
+    // Gentle Auto-Rotation & Rendering Loop (Pauses when offscreen)
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+
+      if (!isVisible) return; // Completely skip rendering when not in viewport!
 
       if (!isDragging) {
         targetRotationY += 0.003;
@@ -259,6 +271,7 @@ export const DishModelViewer: React.FC<DishModelViewerProps> = ({
 
     return () => {
       isMounted = false;
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
       domEl.removeEventListener("mousedown", onMouseDown);

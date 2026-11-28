@@ -64,7 +64,8 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
+    const isMobileOrTouch = window.innerWidth < 1024 || window.matchMedia("(pointer: coarse)").matches;
+    if (prefersReducedMotion || isMobileOrTouch) return;
 
     const onMouseMove = (e: MouseEvent) => {
       const nx = e.clientX / window.innerWidth;
@@ -204,8 +205,8 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           />
         </div>
 
-        {/* ── Atmospheric Golden Dust Particles ── */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        {/* ── Atmospheric Golden Dust Particles (Desktop only for 120fps mobile scroll) ── */}
+        <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           {dustMotes.map((p) => (
             <DustParticle key={p.id} delay={p.delay} left={p.left} size={p.size} dur={p.dur} />
           ))}
@@ -217,15 +218,15 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
         {/* ── Bottom Ambient Fade ── */}
         <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#0D221A] via-[#0D221A]/60 to-transparent pointer-events-none z-10" />
 
-        {/* ── Interactive Cursor-Tracked Warm Tungsten Spotlight ── */}
+        {/* ── Interactive Cursor-Tracked Warm Tungsten Spotlight (Desktop only) ── */}
         <div
           ref={spotlightRef}
-          className="absolute inset-0 pointer-events-none mix-blend-screen"
+          className="hidden lg:block absolute inset-0 pointer-events-none mix-blend-screen"
         />
 
-        {/* ── Film Grain Noise ── */}
+        {/* ── Film Grain Noise (Desktop only — SVG feTurbulence hurts mobile scroll FPS) ── */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.035] mix-blend-overlay"
+          className="hidden lg:block absolute inset-0 pointer-events-none opacity-[0.035] mix-blend-overlay"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
           }}
