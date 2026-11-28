@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Plus, Minus, Check, Flame } from "lucide-react";
+import { Plus, Minus, Flame, Sparkles } from "lucide-react";
 import { MenuItem } from "@/data/menu";
 import { Language } from "@/i18n";
 import { VegBadge } from "../ui/VegBadge";
@@ -38,12 +38,12 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
           {/* Badges on photo */}
           <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
             {item.isChefSpecial && (
-              <span className="bg-[#CBB079] text-[#0D221A] text-[9px] font-mono tracking-wider uppercase px-2.5 py-0.5 rounded-full font-semibold shadow">
+              <span className="bg-[#CBB079] text-[#0D221A] text-[9px] font-mono tracking-wider uppercase px-2.5 py-0.5 rounded-full font-bold shadow">
                 Chef&apos;s Special
               </span>
             )}
             {item.isPopular && (
-              <span className="bg-[#0D221A]/90 text-[#F6F1E8] border border-[#F6F1E8]/20 text-[9px] font-mono tracking-wider uppercase px-2.5 py-0.5 rounded-full">
+              <span className="bg-[#0D221A]/90 text-[#F6F1E8] border border-[#F6F1E8]/20 text-[9px] font-mono tracking-wider uppercase px-2.5 py-0.5 rounded-full font-medium">
                 Popular
               </span>
             )}
@@ -56,16 +56,16 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
         <div>
           {/* Dietary + Title + Price Header */}
           <div className="flex items-start justify-between gap-3 mb-2">
-            <div className="flex items-start space-x-2">
-              <span className="mt-1">
+            <div className="flex items-start space-x-2 min-w-0">
+              <span className="mt-1 shrink-0">
                 <VegBadge size="sm" />
               </span>
-              <div>
-                <h4 className="font-display text-lg sm:text-xl text-[#F6F1E8] font-light leading-snug group-hover:text-[#CBB079] transition-colors">
+              <div className="min-w-0">
+                <h4 className="font-display text-base sm:text-lg text-[#F6F1E8] font-normal leading-snug group-hover:text-[#CBB079] transition-colors truncate">
                   {item.name[currentLang]}
                 </h4>
                 {item.servingSize && (
-                  <span className="text-[10px] text-[#F6F1E8]/40 font-mono tracking-wider">
+                  <span className="text-[10px] text-[#F6F1E8]/50 font-mono tracking-wider block">
                     {item.servingSize}
                   </span>
                 )}
@@ -73,21 +73,21 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
             </div>
 
             {/* INR Price */}
-            <div className="text-right">
-              <span className="font-serif text-lg font-normal text-[#CBB079]">
+            <div className="text-right shrink-0">
+              <span className="font-serif text-lg font-bold text-[#CBB079]">
                 ₹{item.price}
               </span>
             </div>
           </div>
 
-          {/* Mouthwatering Description */}
-          <p className="font-sans-clean text-xs text-[#F6F1E8]/70 leading-relaxed mb-4">
+          {/* Description */}
+          <p className="font-sans-clean text-xs text-[#F6F1E8]/70 leading-relaxed mb-4 line-clamp-2">
             {item.description[currentLang]}
           </p>
         </div>
 
-        {/* Footer: Spice Level & Enquiry Action */}
-        <div className="pt-3 border-t border-[#F6F1E8]/10 flex items-center justify-between">
+        {/* Footer: Spice Level & Add to Cart Action */}
+        <div className="pt-3 border-t border-[#F6F1E8]/10 flex items-center justify-between gap-2">
           {/* Spice indicators */}
           <div className="flex items-center space-x-1" title={`Spice level: ${item.spiceLevel || 1} of 3`}>
             {item.spiceLevel ? (
@@ -99,31 +99,31 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
             )}
           </div>
 
-          {/* Add to Enquiry / Pre-Order Action */}
+          {/* Add to Selection Action */}
           <div>
             {quantityInCart === 0 ? (
               <button
                 onClick={() => onAddToCart(item)}
-                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-[#CBB079]/40 hover:border-[#CBB079] bg-[#CBB079]/10 hover:bg-[#CBB079] text-[#F6F1E8] hover:text-[#0D221A] text-[11px] tracking-wider uppercase font-mono transition-all font-medium"
+                className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full border border-[#CBB079]/50 hover:border-[#CBB079] bg-[#CBB079]/15 hover:bg-[#CBB079] text-[#F6F1E8] hover:text-[#0D221A] text-xs tracking-wider uppercase font-mono transition-all font-semibold shadow-sm active:scale-95 cursor-pointer"
               >
-                <Plus className="w-3 h-3" />
-                <span>Enquire</span>
+                <Plus className="w-3.5 h-3.5" />
+                <span>ADD</span>
               </button>
             ) : (
-              <div className="flex items-center border border-[#CBB079] bg-[#183C2F] rounded-full overflow-hidden">
+              <div className="flex items-center border border-[#CBB079] bg-[#102820] rounded-full overflow-hidden shadow-inner">
                 <button
                   onClick={() => onRemoveFromCart(item.id)}
-                  className="px-2.5 py-1 text-xs text-[#F6F1E8] hover:text-[#CBB079] transition-colors"
+                  className="px-2.5 py-1 text-xs text-[#F6F1E8] hover:text-[#CBB079] hover:bg-[#183C2F] transition-colors cursor-pointer"
                   aria-label="Decrease quantity"
                 >
                   <Minus className="w-3 h-3" />
                 </button>
-                <span className="px-2 text-xs font-mono text-[#CBB079] font-semibold">
+                <span className="px-2 text-xs font-mono text-[#CBB079] font-bold min-w-[20px] text-center">
                   {quantityInCart}
                 </span>
                 <button
                   onClick={() => onAddToCart(item)}
-                  className="px-2.5 py-1 text-xs text-[#F6F1E8] hover:text-[#CBB079] transition-colors"
+                  className="px-2.5 py-1 text-xs text-[#F6F1E8] hover:text-[#CBB079] hover:bg-[#183C2F] transition-colors cursor-pointer"
                   aria-label="Increase quantity"
                 >
                   <Plus className="w-3 h-3" />

@@ -198,7 +198,7 @@ export const FoodEditorial: React.FC<FoodEditorialProps> = ({ currentLang }) => 
                 All curries served with freshly churned butter &amp; salads
               </span>
               <a
-                href="#full-menu"
+                href="#menu"
                 className="inline-flex items-center space-x-1.5 text-xs text-[#CBB079] hover:text-[#E2CD9A] font-mono tracking-wider uppercase font-semibold"
               >
                 <span>Full Menu</span>

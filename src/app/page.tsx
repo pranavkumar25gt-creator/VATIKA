@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Language } from "@/i18n";
+import { CartProvider } from "@/context/CartContext";
 import { MicroLoader } from "@/components/layout/MicroLoader";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Navbar } from "@/components/layout/Navbar";
@@ -13,22 +14,25 @@ import { CelebrationsSection } from "@/components/celebrations/CelebrationsSecti
 import { GallerySection } from "@/components/gallery/GallerySection";
 import { VisitSection } from "@/components/visit/VisitSection";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingCartBar } from "@/components/layout/FloatingCartBar";
+import { EnquiryDrawer } from "@/components/menu/EnquiryDrawer";
+import { BackToTop } from "@/components/layout/BackToTop";
 
 export default function HomePage() {
   const [currentLang, setCurrentLang] = useState<Language>("en");
 
   return (
-    <>
+    <CartProvider>
       {/* 0. Editorial Micro-Loader (< 1.2s, skips on repeat visits) */}
       <MicroLoader />
 
       {/* Cinematic Smooth Scroll Provider */}
       <SmoothScroll>
-        {/* Persistent Floating Navigation with Language Switcher */}
+        {/* Persistent Floating Navigation with Language Switcher & Cart Badge */}
         <Navbar currentLang={currentLang} onLanguageChange={setCurrentLang} />
 
         <main className="flex-1 w-full bg-[#0D221A]">
-          {/* 1. HERO: 3D ScrollTrigger Cinematic Video Stage */}
+          {/* 1. HERO: Royal Overhead Feast Cinematic Stage */}
           <HeroScrollTriggerCinema currentLang={currentLang} />
 
           {/* 2. THE PLACE: Architectural Walk-Through */}
@@ -37,7 +41,7 @@ export default function HomePage() {
           {/* 3. THE FOOD: Culinary Artistry & 3D Scanned Handi Viewer */}
           <FoodEditorial currentLang={currentLang} />
 
-          {/* 4. FULL MENU: Searchable, Categorized, Live WhatsApp Enquiry Cart */}
+          {/* 4. FULL MENU: Searchable, Categorized, Live Selection Cart */}
           <MenuSection currentLang={currentLang} />
 
           {/* 5. CELEBRATIONS: Banquet Halls & WhatsApp Event Planner */}
@@ -52,7 +56,16 @@ export default function HomePage() {
 
         {/* Quiet, Beautiful Editorial Footer */}
         <Footer currentLang={currentLang} />
+
+        {/* Persistent Floating Pre-order Cart Bar */}
+        <FloatingCartBar currentLang={currentLang} />
+
+        {/* Slide-over Enquiry & Pre-order Drawer */}
+        <EnquiryDrawer currentLang={currentLang} />
+
+        {/* Circular Luxury Back To Top Button */}
+        <BackToTop />
       </SmoothScroll>
-    </>
+    </CartProvider>
   );
 }

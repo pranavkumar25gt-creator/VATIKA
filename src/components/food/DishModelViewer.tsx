@@ -360,7 +360,7 @@ export const DishModelViewer: React.FC<DishModelViewerProps> = ({
           {model.description[currentLang]}
         </p>
         <a
-          href="#full-menu"
+          href="#menu"
           className="text-[#CBB079] hover:text-[#E2CD9A] uppercase tracking-widest text-[11px] font-mono whitespace-nowrap font-medium"
         >
           View on Full Menu →

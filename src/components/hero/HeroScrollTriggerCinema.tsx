@@ -50,7 +50,7 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
     []
   );
 
-  // Damped cursor & gyroscope for tungsten spotlight + 2.5D depth
+  // Damped cursor & gyroscope coordinates
   const pointer = useRef({
     x: 0.72,
     y: 0.48,
@@ -125,7 +125,7 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
 
   return (
     <section
-      className="relative w-full min-h-screen lg:h-screen lg:min-h-[720px] lg:max-h-[1000px] bg-[#0D221A] overflow-hidden flex items-center"
+      className="relative w-full min-h-[100dvh] lg:h-screen lg:min-h-[720px] lg:max-h-[1000px] bg-[#0D221A] overflow-hidden flex flex-col lg:flex-row items-center justify-between"
       aria-label="Hotel Vatika Royal Overhead Feast"
     >
       {/* ═══ BASE BACKGROUND SURFACE ═══ */}
@@ -136,7 +136,6 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           ref={photoLayerRef}
           className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none"
           style={{
-            /* Wide gradient mask: fade from left into the photo area */
             maskImage:
               "linear-gradient(to right, transparent 0%, transparent 44%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 56%, black 62%, black 100%)",
             WebkitMaskImage:
@@ -161,7 +160,6 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
                 "linear-gradient(to right, #0D221A 0%, #0D221A 46%, rgba(13,34,26,0.7) 54%, rgba(13,34,26,0.35) 62%, rgba(13,34,26,0.15) 72%, transparent 85%)",
             }}
           />
-          {/* Top blend — covers the baked-in nav text from the AI image */}
           <div
             className="absolute top-0 inset-x-0 pointer-events-none"
             style={{
@@ -169,30 +167,12 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
               background: "linear-gradient(to bottom, #0D221A 40%, transparent 100%)",
             }}
           />
-          {/* Bottom blend */}
           <div
             className="absolute bottom-0 inset-x-0 pointer-events-none"
             style={{
               height: "14%",
               background: "linear-gradient(to top, #0D221A 30%, transparent 100%)",
             }}
-          />
-        </div>
-
-        {/* ── Mobile/Tablet: Radial Vignette Dish Crop ── */}
-        <div
-          className="lg:hidden absolute inset-x-0 top-14 h-[55%] pointer-events-none opacity-85"
-          style={{
-            maskImage: "radial-gradient(ellipse 65% 55% at 55% 50%, black 20%, transparent 55%)",
-            WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 55% 50%, black 20%, transparent 55%)",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/photos/hero-overhead-feast.jpg"
-            alt="Royal Overhead Feast — Hotel Vatika"
-            className="w-full h-full object-cover object-[85%_55%] scale-[1.5]"
-            style={{ clipPath: "inset(14% 0 0 42%)" }}
           />
         </div>
 
@@ -204,8 +184,8 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
         </div>
 
         {/* ── Top & Bottom Cinematic Fades ── */}
-        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0D221A] from-50% via-[#0D221A]/80 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#0D221A] via-[#0D221A]/50 to-transparent pointer-events-none" />
+        <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#0D221A] from-50% via-[#0D221A]/80 to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#0D221A] via-[#0D221A]/50 to-transparent pointer-events-none z-10" />
 
         {/* ── Interactive Cursor-Tracked Warm Tungsten Spotlight ── */}
         <div
@@ -213,9 +193,9 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           className="absolute inset-0 pointer-events-none mix-blend-screen"
         />
 
-        {/* ── Subtle Film Grain Noise (layered on the hero only) ── */}
+        {/* ── Film Grain Noise ── */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay"
+          className="absolute inset-0 pointer-events-none opacity-[0.035] mix-blend-overlay"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
           }}
@@ -223,29 +203,43 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
         />
       </div>
 
-      {/* ═══ HERO CONTENT LOCKUP ═══ */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-14 pt-28 pb-28 lg:py-0 flex flex-col justify-end lg:justify-center min-h-screen lg:min-h-0">
-        <div className="max-w-2xl">
+      {/* ═══ MOBILE-SPECIFIC RADIANT FOOD SHOWCASE (Top Half) ═══ */}
+      <div className="lg:hidden relative w-full pt-20 pb-2 px-6 flex items-center justify-center shrink-0 z-10">
+        <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border border-[#CBB079]/30 shadow-[0_12px_36px_rgba(0,0,0,0.8),0_0_30px_rgba(203,176,121,0.15)]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/photos/hero-overhead-feast.jpg"
+            alt="Hotel Vatika Royal Overhead Feast"
+            className="w-full h-full object-cover object-[75%_50%] scale-125"
+            style={{ clipPath: "inset(12% 0 0 35%)" }}
+          />
+          <div className="absolute inset-0 rounded-full bg-radial from-transparent via-transparent to-[#0D221A]/70 pointer-events-none" />
+        </div>
+      </div>
+
+      {/* ═══ HERO CONTENT LOCKUP (Bottom Half on Mobile, Left Side on Desktop) ═══ */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-14 pb-20 sm:pb-24 lg:py-0 flex flex-col justify-center flex-1 lg:flex-initial">
+        <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
 
           {/* ── Ornamental Gold Divider Line ── */}
-          <div className="hero-fade-in-1 mb-5 flex items-center gap-3">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#CBB079]/60" />
-            <span className="text-[9px] tracking-[0.35em] uppercase text-[#CBB079]/80 font-sans-clean font-medium">
+          <div className="hero-fade-in-1 mb-2.5 sm:mb-4 flex items-center justify-center lg:justify-start gap-2.5">
+            <div className="h-[1px] w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#CBB079]/60" />
+            <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase text-[#CBB079]/90 font-mono font-bold">
               EST. PARBHANI
             </span>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#CBB079]/60" />
+            <div className="h-[1px] w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#CBB079]/60" />
           </div>
 
           {/* ── Grand Calligraphic Script Title ── */}
-          <div className="hero-fade-in-2 mb-4">
+          <div className="hero-fade-in-2 mb-2 sm:mb-3">
             <span
-              className="font-script font-bold text-7xl sm:text-8xl md:text-9xl xl:text-[9rem] text-transparent bg-clip-text block leading-[0.85] select-none"
+              className="font-script font-bold text-5xl sm:text-7xl md:text-8xl xl:text-[8.5rem] text-transparent bg-clip-text block leading-[0.9] select-none"
               style={{
                 backgroundImage:
                   "linear-gradient(90deg, #CBB079 0%, #E8D5A8 25%, #CBB079 50%, #A8905A 75%, #CBB079 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmerGold 6s linear infinite",
-                filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.6))",
+                filter: "drop-shadow(0 6px 20px rgba(0,0,0,0.6))",
               }}
             >
               Hotel Vatika
@@ -253,16 +247,16 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           </div>
 
           {/* ── Luxe Serif Subtitle ── */}
-          <div className="hero-fade-in-3 mb-6">
-            <h1 className="font-display text-2xl sm:text-3xl md:text-[2.4rem] xl:text-[2.8rem] text-[#F6F1E8] font-normal tracking-[0.06em] uppercase leading-tight drop-shadow-md">
+          <div className="hero-fade-in-3 mb-4 sm:mb-6">
+            <h1 className="font-display text-xl sm:text-3xl md:text-[2.4rem] xl:text-[2.8rem] text-[#F6F1E8] font-normal tracking-[0.06em] uppercase leading-tight drop-shadow-md">
               PURE VEG SANCTUARY
             </h1>
-            <p className="font-serif-editorial text-sm sm:text-base text-[#F6F1E8]/65 mt-2 max-w-lg leading-relaxed italic">
+            <p className="font-serif-editorial text-xs sm:text-base text-[#F6F1E8]/70 mt-1.5 sm:mt-2 max-w-lg mx-auto lg:mx-0 leading-relaxed italic">
               {t.hero.subTagline}
             </p>
           </div>
 
-          {/* ── Breathing Glow Behind Title (ambient halo) ── */}
+          {/* ── Breathing Glow Behind Title (Desktop only) ── */}
           <div
             className="hidden lg:block absolute -top-8 -left-16 w-[420px] h-[420px] rounded-full pointer-events-none"
             style={{
@@ -273,47 +267,49 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           />
 
           {/* ── Compact Rating Pill ── */}
-          <a
-            href={RESTAURANT_DATA.zomato.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-fade-in-4 inline-flex items-center space-x-2 mb-8 bg-[#143328]/80 hover:bg-[#183C2F] backdrop-blur-md border border-[#CBB079]/25 hover:border-[#CBB079]/60 rounded-full px-4 py-2 transition-all group"
-          >
-            <Star className="w-3.5 h-3.5 text-[#CBB079] fill-[#CBB079]" />
-            <span className="text-xs text-[#F6F1E8] font-sans-clean font-medium tracking-wide">
-              4.5
-            </span>
-            <span className="text-[10px] text-[#F6F1E8]/50 font-sans-clean">
-              on Zomato • 3,140+ ratings
-            </span>
-          </a>
+          <div className="hero-fade-in-4 mb-5 sm:mb-7 flex justify-center lg:justify-start">
+            <a
+              href={RESTAURANT_DATA.zomato.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-[#143328]/90 hover:bg-[#183C2F] backdrop-blur-md border border-[#CBB079]/30 hover:border-[#CBB079] rounded-full px-3.5 py-1.5 transition-all group"
+            >
+              <Star className="w-3.5 h-3.5 text-[#CBB079] fill-[#CBB079]" />
+              <span className="text-xs text-[#F6F1E8] font-sans-clean font-bold tracking-wide">
+                4.5
+              </span>
+              <span className="text-[10px] text-[#F6F1E8]/60 font-sans-clean">
+                on Zomato • 3,140+ reviews
+              </span>
+            </a>
+          </div>
 
           {/* ── Dual CTA Pill Buttons ── */}
-          <div className="hero-fade-in-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="hero-fade-in-5 flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <a
               href="#menu"
-              className="inline-flex items-center justify-center bg-[#CBB079] hover:bg-[#E2CD9A] text-[#0D221A] px-8 py-3.5 rounded-full text-xs tracking-[0.16em] uppercase font-semibold transition-all duration-300 hover:shadow-[0_10px_40px_rgba(203,176,121,0.4)]"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center bg-[#CBB079] hover:bg-[#E2CD9A] text-[#0D221A] px-5 sm:px-8 py-3 rounded-full text-[11px] sm:text-xs tracking-[0.14em] uppercase font-bold transition-all duration-300 shadow-lg active:scale-95"
               style={{ animation: "ctaPulse 3s ease-in-out 2s infinite" }}
             >
-              EXPLORE THE MENU
+              EXPLORE MENU
             </a>
             <a
               href="#celebrations"
-              className="inline-flex items-center justify-center border border-[#CBB079]/50 hover:border-[#CBB079] bg-[#0D221A]/70 hover:bg-[#143328] text-[#F6F1E8] px-8 py-3.5 rounded-full text-xs tracking-[0.16em] uppercase font-medium transition-all duration-300 backdrop-blur-sm"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center border border-[#CBB079]/50 hover:border-[#CBB079] bg-[#0D221A]/80 hover:bg-[#143328] text-[#F6F1E8] px-5 sm:px-8 py-3 rounded-full text-[11px] sm:text-xs tracking-[0.14em] uppercase font-semibold transition-all duration-300 backdrop-blur-sm active:scale-95"
             >
-              PLAN YOUR CELEBRATION
+              PLAN EVENT
             </a>
           </div>
         </div>
       </div>
 
-      {/* ═══ QUIET SCROLL HINT ═══ */}
+      {/* ═══ QUIET SCROLL HINT (Desktop only) ═══ */}
       <a
         href="#the-place"
-        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center space-y-1 text-[#F6F1E8]/35 hover:text-[#CBB079] transition-colors group cursor-pointer"
+        className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center space-y-1 text-[#F6F1E8]/40 hover:text-[#CBB079] transition-colors group cursor-pointer"
         aria-label="Scroll to explore"
       >
-        <span className="text-[9px] tracking-[0.3em] uppercase font-sans-clean group-hover:tracking-[0.4em] transition-all">
+        <span className="text-[9px] tracking-[0.3em] uppercase font-mono group-hover:tracking-[0.4em] transition-all">
           {t.hero.scrollHint}
         </span>
         <ChevronDown className="w-4 h-4 text-[#CBB079]/60 animate-bounce" />
