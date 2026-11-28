@@ -176,38 +176,30 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           />
         </div>
 
-        {/* ── Mobile/Tablet: Immersive Full-Bleed Top Backdrop (Seamless fade down) ── */}
+        {/* ── Mobile/Tablet: Immersive 100% Full-Width Clean Feast Backdrop ── */}
         <div
-          className="lg:hidden absolute top-0 inset-x-0 h-[58vh] sm:h-[62vh] pointer-events-none overflow-hidden"
+          className="lg:hidden absolute top-0 inset-x-0 w-full h-[54vh] sm:h-[58vh] pointer-events-none overflow-hidden"
           style={{
             maskImage:
-              "linear-gradient(to bottom, black 0%, black 48%, rgba(0,0,0,0.7) 68%, rgba(0,0,0,0.2) 86%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 52%, rgba(0,0,0,0.7) 72%, rgba(0,0,0,0.2) 88%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 48%, rgba(0,0,0,0.7) 68%, rgba(0,0,0,0.2) 86%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 52%, rgba(0,0,0,0.7) 72%, rgba(0,0,0,0.2) 88%, transparent 100%)",
           }}
         >
+          {/* Clean full-bleed food spread without any baked-in text */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/photos/hero-overhead-feast.jpg"
-            alt="Royal Overhead Feast — Hotel Vatika"
-            className="w-full h-full object-cover object-[78%_38%] scale-110"
-            style={{ clipPath: "inset(12% 0 0 42%)" }}
+            src="/assets/photos/hero-mobile-clean.jpg"
+            alt="Hotel Vatika Royal Overhead Feast — Paneer Angara, Handi & Garlic Naan"
+            className="w-full h-full object-cover object-center"
           />
 
-          {/* Emerald color wash to fuse photo background with #0D221A */}
+          {/* Smooth bottom emerald gradient fade into the page surface */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(13,34,26,0.2) 0%, transparent 35%, rgba(13,34,26,0.8) 75%, #0D221A 100%)",
-            }}
-          />
-          {/* Left-edge feathering to soften the vertical boundary */}
-          <div
-            className="absolute inset-y-0 left-0 w-3/5 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(to right, #0D221A 0%, rgba(13,34,26,0.85) 40%, rgba(13,34,26,0.3) 70%, transparent 100%)",
+                "linear-gradient(to bottom, rgba(13,34,26,0.1) 0%, transparent 40%, rgba(13,34,26,0.75) 75%, #0D221A 100%)",
             }}
           />
         </div>
