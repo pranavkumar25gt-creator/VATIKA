@@ -125,13 +125,13 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
 
   return (
     <section
-      className="relative w-full min-h-[100dvh] lg:h-screen lg:min-h-[720px] lg:max-h-[1000px] bg-[#0D221A] overflow-hidden flex flex-col lg:flex-row items-center justify-between"
+      className="relative w-full min-h-[100dvh] lg:h-screen lg:min-h-[720px] lg:max-h-[1000px] bg-[#0D221A] overflow-hidden flex flex-col justify-end lg:justify-center"
       aria-label="Hotel Vatika Royal Overhead Feast"
     >
       {/* ═══ BASE BACKGROUND SURFACE ═══ */}
       <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#0D221A]">
 
-        {/* ── Desktop: Hero Feast Photo with Ken Burns + Color Wash ── */}
+        {/* ── Desktop: Full-bleed Right Stage with Ken Burns + Gradient Mask ── */}
         <div
           ref={photoLayerRef}
           className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none"
@@ -176,6 +176,42 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           />
         </div>
 
+        {/* ── Mobile/Tablet: Immersive Full-Bleed Top Backdrop (Seamless fade down) ── */}
+        <div
+          className="lg:hidden absolute top-0 inset-x-0 h-[58vh] sm:h-[62vh] pointer-events-none overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, black 0%, black 48%, rgba(0,0,0,0.7) 68%, rgba(0,0,0,0.2) 86%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 0%, black 48%, rgba(0,0,0,0.7) 68%, rgba(0,0,0,0.2) 86%, transparent 100%)",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/photos/hero-overhead-feast.jpg"
+            alt="Royal Overhead Feast — Hotel Vatika"
+            className="w-full h-full object-cover object-[78%_38%] scale-110"
+            style={{ clipPath: "inset(12% 0 0 42%)" }}
+          />
+
+          {/* Emerald color wash to fuse photo background with #0D221A */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(13,34,26,0.2) 0%, transparent 35%, rgba(13,34,26,0.8) 75%, #0D221A 100%)",
+            }}
+          />
+          {/* Left-edge feathering to soften the vertical boundary */}
+          <div
+            className="absolute inset-y-0 left-0 w-3/5 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to right, #0D221A 0%, rgba(13,34,26,0.85) 40%, rgba(13,34,26,0.3) 70%, transparent 100%)",
+            }}
+          />
+        </div>
+
         {/* ── Atmospheric Golden Dust Particles ── */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           {dustMotes.map((p) => (
@@ -183,9 +219,11 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
           ))}
         </div>
 
-        {/* ── Top & Bottom Cinematic Fades ── */}
-        <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#0D221A] from-50% via-[#0D221A]/80 to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#0D221A] via-[#0D221A]/50 to-transparent pointer-events-none z-10" />
+        {/* ── Top Header Fade ── */}
+        <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#0D221A] from-45% via-[#0D221A]/80 to-transparent pointer-events-none z-10" />
+
+        {/* ── Bottom Ambient Fade ── */}
+        <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#0D221A] via-[#0D221A]/60 to-transparent pointer-events-none z-10" />
 
         {/* ── Interactive Cursor-Tracked Warm Tungsten Spotlight ── */}
         <div
@@ -203,22 +241,8 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
         />
       </div>
 
-      {/* ═══ MOBILE-SPECIFIC RADIANT FOOD SHOWCASE (Top Half) ═══ */}
-      <div className="lg:hidden relative w-full pt-20 pb-2 px-6 flex items-center justify-center shrink-0 z-10">
-        <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border border-[#CBB079]/30 shadow-[0_12px_36px_rgba(0,0,0,0.8),0_0_30px_rgba(203,176,121,0.15)]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/photos/hero-overhead-feast.jpg"
-            alt="Hotel Vatika Royal Overhead Feast"
-            className="w-full h-full object-cover object-[75%_50%] scale-125"
-            style={{ clipPath: "inset(12% 0 0 35%)" }}
-          />
-          <div className="absolute inset-0 rounded-full bg-radial from-transparent via-transparent to-[#0D221A]/70 pointer-events-none" />
-        </div>
-      </div>
-
-      {/* ═══ HERO CONTENT LOCKUP (Bottom Half on Mobile, Left Side on Desktop) ═══ */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-14 pb-20 sm:pb-24 lg:py-0 flex flex-col justify-center flex-1 lg:flex-initial">
+      {/* ═══ HERO CONTENT LOCKUP ═══ */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-14 pb-28 sm:pb-32 lg:py-0 flex flex-col justify-end lg:justify-center">
         <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
 
           {/* ── Ornamental Gold Divider Line ── */}
@@ -284,18 +308,18 @@ export const HeroScrollTriggerCinema: React.FC<HeroScrollTriggerCinemaProps> = (
             </a>
           </div>
 
-          {/* ── Dual CTA Pill Buttons ── */}
+          {/* ── Dual CTA Pill Buttons (Positioned comfortably above bottom bar) ── */}
           <div className="hero-fade-in-5 flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <a
               href="#menu"
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center bg-[#CBB079] hover:bg-[#E2CD9A] text-[#0D221A] px-5 sm:px-8 py-3 rounded-full text-[11px] sm:text-xs tracking-[0.14em] uppercase font-bold transition-all duration-300 shadow-lg active:scale-95"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center bg-[#CBB079] hover:bg-[#E2CD9A] text-[#0D221A] px-5 sm:px-8 py-3 rounded-full text-[11px] sm:text-xs tracking-[0.14em] uppercase font-bold transition-all duration-300 shadow-lg active:scale-95 cursor-pointer"
               style={{ animation: "ctaPulse 3s ease-in-out 2s infinite" }}
             >
               EXPLORE MENU
             </a>
             <a
               href="#celebrations"
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center border border-[#CBB079]/50 hover:border-[#CBB079] bg-[#0D221A]/80 hover:bg-[#143328] text-[#F6F1E8] px-5 sm:px-8 py-3 rounded-full text-[11px] sm:text-xs tracking-[0.14em] uppercase font-semibold transition-all duration-300 backdrop-blur-sm active:scale-95"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center border border-[#CBB079]/50 hover:border-[#CBB079] bg-[#0D221A]/80 hover:bg-[#143328] text-[#F6F1E8] px-5 sm:px-8 py-3 rounded-full text-[11px] sm:text-xs tracking-[0.14em] uppercase font-semibold transition-all duration-300 backdrop-blur-sm active:scale-95 cursor-pointer"
             >
               PLAN EVENT
             </a>
